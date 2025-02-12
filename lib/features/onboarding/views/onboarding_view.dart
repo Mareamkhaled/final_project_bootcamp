@@ -1,3 +1,4 @@
+import 'package:final_project_bootcamp/core/Routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -59,7 +60,7 @@ class OnboardingView extends HookWidget {
                     
                   },
                   onPressedTwo: () {
-                    
+                    Navigator.pushReplacementNamed(context, Routes.login);
                   },
                   image: Assets.assetsImagesOnboarding3gif,
                   title: AppStrings.onBoardingThreeText,
