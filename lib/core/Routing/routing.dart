@@ -1,5 +1,6 @@
-
 import 'package:dio/dio.dart';
+import 'package:final_project_bootcamp/features/signup/logic/cubit/signup_cubit.dart';
+import 'package:final_project_bootcamp/features/signup/ui/views/signup_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,6 +28,12 @@ class Routing {
             builder: (context) => BlocProvider(
                   create: (context) => LoginCubit(DioConsumer(dio: Dio())),
                   child: LogInView(),
+                ));
+      case Routes.register:
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                  create: (context) => SignupCubit(DioConsumer(dio: Dio())),
+                  child: SignUpView(),
                 ));
 
       default:
