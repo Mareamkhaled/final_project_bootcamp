@@ -1,3 +1,4 @@
+import 'package:final_project_bootcamp/features/onboarding/views/onboarding_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../features/splash/views/splash_view.dart';
@@ -9,6 +10,8 @@ class Routing {
     switch (settings.name) {
       case Routes.splash:
         return MaterialPageRoute(builder: (context) => SplashView());
+      case Routes.onboarding:
+        return MaterialPageRoute(builder: (context) => OnboardingView());
       
                
       default:
