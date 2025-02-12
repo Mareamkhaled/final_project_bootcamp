@@ -8,7 +8,6 @@ import '../../../../core/helpers/form_validate.dart';
 import '../../../../core/widgets/my_text_form_field.dart';
 import '../../logic/cubit/login_cubit.dart';
 
-
 class LogInForm extends StatefulWidget {
   const LogInForm({super.key});
 
@@ -28,7 +27,6 @@ class _LogInFormState extends State<LogInForm> {
               children: [
                 MyTextFormField(
                   prefixIcon: Icon(Icons.email_outlined),
-
                   controller: BlocProvider.of<LoginCubit>(context).signInEmail,
                   validator: FormValidator.validateEmail,
                   text: "Email",
@@ -36,24 +34,23 @@ class _LogInFormState extends State<LogInForm> {
                 ),
                 Gap(30.h),
                 MyTextFormField(
-                 suffixIcon: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      isObsecure = !isObsecure;
-                    });
-                  },
-                  icon: isObsecure
-                      ? Icon(Icons.visibility_off)
-                      : Icon(Icons.visibility),
-                ),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        isObsecure = !isObsecure;
+                      });
+                    },
+                    icon: isObsecure
+                        ? Icon(Icons.visibility_off)
+                        : Icon(Icons.visibility),
+                  ),
                   prefixIcon: Icon(Icons.lock_outline),
-                  isObscureText: true,
+                  isObscureText: isObsecure,
                   controller:
                       BlocProvider.of<LoginCubit>(context).signInPassword,
                   validator: FormValidator.validatePassword,
                   text: "Password",
                   hintText: "Enter your password",
-                
                 ),
               ],
             )),
