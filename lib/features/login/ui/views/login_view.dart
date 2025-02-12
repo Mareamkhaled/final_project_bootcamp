@@ -108,6 +108,12 @@ class LogInView extends StatelessWidget {
                     MyContainer(img: Assets.assetsImagesFaceBookPng)
                   ],
                 ),
+                Row(
+                  children: [
+                    Text("data"),
+                    Text("data"),
+                  ],
+                )
               ],
             ),
           )));
