@@ -1,5 +1,6 @@
 import 'package:final_project_bootcamp/main%20screen/presentation/widgets/location_text_with_current_locatoin.dart';
 import 'package:final_project_bootcamp/main%20screen/presentation/widgets/notification_button.dart';
+import 'package:final_project_bootcamp/notification/presentation/views/notification_screen.dart';
 import 'package:flutter/material.dart';
 
 class LocationSectionWithNotificationButton extends StatelessWidget {
@@ -15,7 +16,16 @@ class LocationSectionWithNotificationButton extends StatelessWidget {
           location: "Egypt, Cairo",
         ),
         Spacer(),
-        NotificationButton()
+        NotificationButton(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => NotificationScreen(),
+              ),
+            );
+          },
+        )
       ],
     );
   }
