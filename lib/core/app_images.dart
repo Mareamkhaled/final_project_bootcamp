@@ -10,4 +10,6 @@ class Assets {
       'assets/images/onboardingone.gif';
   static const String assetsImagesOnboarding2gif =
       'assets/images/onboardingtwo.gif';
+  static const String assetsImagesfilter = 'assets/images/filter.png';
+  static const String assetsImagesTest = 'assets/images/test.png';
 }
