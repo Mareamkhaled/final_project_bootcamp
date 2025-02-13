@@ -1,11 +1,17 @@
-import 'package:final_project_bootcamp/core/app_colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../../core/app_colors.dart';
+import '../../../core/app_styles.dart' show AppStyles;
+import '../../../helper/get_font_size.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
     super.key,
+    required this.categoryName,
+    required this.categoryImage,
   });
-
+  final String categoryName;
+  final String categoryImage;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,11 +31,21 @@ class CategoryCard extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Icon(Icons.abc),
+            Image(
+              image: AssetImage(categoryImage),
+              height: 30,
+              fit: BoxFit.cover,
+            ),
             SizedBox(
               width: 5,
             ),
-            Text("data")
+            Text(
+              categoryName,
+              style: AppStyles.semiBold.copyWith(
+                color: AppColors.myBlack,
+                fontSize: getFontSize(context, 10),
+              ),
+            )
           ],
         ),
       ),
