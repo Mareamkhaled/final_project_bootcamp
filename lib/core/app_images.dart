@@ -12,4 +12,6 @@ class Assets {
       'assets/images/onboardingtwo.gif';
   static const String assetsImagesfilter = 'assets/images/filter.png';
   static const String assetsImagesTest = 'assets/images/test.png';
+  static const String assetsImagesAvatar =
+      'assets/images/notification_pic_1.png';
 }
