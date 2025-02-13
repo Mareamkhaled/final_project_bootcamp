@@ -48,9 +48,7 @@ class MainScreen extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),
-                  SizedBox(
-                    height: 15,
-                  ),
+                  SizedBox(height: 15),
                   CustomGridView(),
                 ],
               ),
