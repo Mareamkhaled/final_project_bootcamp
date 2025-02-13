@@ -9,8 +9,8 @@ class NewPriceAndTheOld extends StatelessWidget {
     required this.newPrice,
     required this.oldPrice,
   });
-  final double newPrice;
-  final double oldPrice;
+  final String newPrice;
+  final String oldPrice;
   @override
   Widget build(BuildContext context) {
     return Row(

@@ -15,8 +15,8 @@ class CardItem extends StatelessWidget {
     required this.nameProduct,
     required this.image,
   });
-  final double newPrice;
-  final double oldPrice;
+  final String newPrice;
+  final String oldPrice;
   final String nameProduct;
   final String image;
   @override
