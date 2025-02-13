@@ -71,10 +71,28 @@ class OnboardingView extends HookWidget {
               ],
             ),
           ),
-           Positioned(
-             bottom: 150.h,
-             left: 180.w,
-             child: SmoothPageIndicator(
+          //  Positioned(
+          //    bottom: 150.h,
+          //    left: 180.w,
+          //    child: SmoothPageIndicator(
+          //     controller: pageController,
+          //     count: 3,
+          //     axisDirection: Axis.horizontal,
+          //     effect: WormEffect(
+          //       spacing: 6,
+          //       radius: 10.0,
+          //       dotWidth: 20.h,
+          //       dotHeight: 20.h,
+          //       strokeWidth: 10,
+          //       dotColor: AppColors.myGrey,
+          //       activeDotColor: AppColors.myBlue,
+          //     ),
+          //              ),
+          //  ),
+
+          Container(
+            alignment: const Alignment(0, 0.75),
+          child: SmoothPageIndicator(
               controller: pageController,
               count: 3,
               axisDirection: Axis.horizontal,
@@ -88,7 +106,7 @@ class OnboardingView extends HookWidget {
                 activeDotColor: AppColors.myBlue,
               ),
                        ),
-           ),
+          ),
           
         ],
       ),

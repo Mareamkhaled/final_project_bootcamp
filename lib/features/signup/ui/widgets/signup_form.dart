@@ -16,6 +16,7 @@ class SignupForm extends StatefulWidget {
 
 class _SignupFormState extends State<SignupForm> {
   bool isObsecure = true;
+  bool isObsecure2 = true;
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +26,22 @@ class _SignupFormState extends State<SignupForm> {
           key: BlocProvider.of<SignupCubit>(context).signUpKey,
           child: Column(
             children: [
-              MyTextFormField(
-                prefixIcon: Icon(Icons.person_2_outlined),
-                controller: BlocProvider.of<SignupCubit>(context).signUpName,
-                validator: FormValidator.validateName,
-                text: "Name",
-                hintText: "Enter your name",
-              ),
+              // MyTextFormField(
+              //   prefixIcon: Icon(Icons.person_2_outlined),
+              //   controller: BlocProvider.of<SignupCubit>(context).signUpName,
+              //   validator: FormValidator.validateName,
+              //   text: "Name",
+              //   hintText: "Enter your name",
+              // ),
+              // Gap(30.h),
+                MyTextFormField(
+                        prefixIcon: Icon(Icons.person_2_outlined),
+                        controller:
+                            BlocProvider.of<SignupCubit>(context).signUpName,
+                        validator: FormValidator.validateName,
+                        text: "Name",
+                        hintText: "Enter your name",
+                      ),
               Gap(30.h),
 
               MyTextFormField(
@@ -60,6 +70,47 @@ class _SignupFormState extends State<SignupForm> {
                 text: "Password",
                 hintText: "Enter your password",
               ),
+              Gap(30.h),
+
+              MyTextFormField(
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      isObsecure2 = !isObsecure2;
+                    });
+                  },
+                  icon: isObsecure2
+                      ? Icon(Icons.visibility_off)
+                      : Icon(Icons.visibility),
+                ),
+                prefixIcon: Icon(Icons.lock_outline),
+                controller: BlocProvider.of<SignupCubit>(context).signUpConfirmPassword,
+                 validator: (value) => FormValidator.validateConfirmPassword(
+              BlocProvider.of<SignupCubit>(context).signUpPassword.text, value),
+                // validator: (value) => FormValidator.validateConfirmPassword(value, BlocProvider.of<SignupCubit>(context).signUpConfirmPassword.text),
+                text: "Confirm Password",
+                hintText: "Confirm your password",
+              ),
+              Gap(30.h),
+              
+              MyTextFormField(
+                prefixIcon: Icon(Icons.phone),
+                controller: BlocProvider.of<SignupCubit>(context).signUpPhoneNumber,
+                validator: FormValidator.validatePhoneNumber,
+                text: "Phone Number",
+                hintText: "Enter your phone number",
+              ),
+              Gap(30.h),
+
+              MyTextFormField(
+                prefixIcon: Icon(Icons.location_city),
+                // controller: BlocProvider.of<SignupCubit>(context).signUpPhoneNumber,
+                // validator: FormValidator.validatePhoneNumber,
+                text: "Location",
+                hintText: "Enter your location",
+              ),
+
+              
             ],
           ),
         ),

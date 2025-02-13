@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:final_project_bootcamp/features/home/ui/screens/home_view.dart';
+import 'package:final_project_bootcamp/features/profile/profile_view.dart';
 import 'package:final_project_bootcamp/features/signup/logic/cubit/signup_cubit.dart';
 import 'package:final_project_bootcamp/features/signup/ui/views/signup_view.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +25,16 @@ class Routing {
         return MaterialPageRoute(builder: (context) => OnboardingView());
       case Routes.test:
         return MaterialPageRoute(builder: (context) => Test());
+      case Routes.home:
+        return MaterialPageRoute(builder: (context) => HomeView());
+      case Routes.profile:
+        return MaterialPageRoute(builder: (context) => MultiBlocProvider(
+            providers: [
+               BlocProvider<LoginCubit>(
+                      create: (context) => LoginCubit(DioConsumer(dio: Dio())),
+               )
+            ],child: ProfileScreen()),
+          );
       case Routes.login:
         return MaterialPageRoute(
             builder: (context) => BlocProvider(
@@ -32,9 +44,21 @@ class Routing {
       case Routes.register:
         return MaterialPageRoute(
             builder: (context) => BlocProvider(
-                  create: (context) => SignupCubit(DioConsumer(dio: Dio())),
+                  create: (context) => SignupCubit(
+                    DioConsumer(dio: Dio()),
+                  ),
                   child: SignUpView(),
                 ));
+      // case Routes.register2:
+      //   return MaterialPageRoute(
+      //       builder: (context) => MultiBlocProvider(
+      //             providers: [
+      //               BlocProvider<SignupCubit>(
+      //                 create: (context) => SignupCubit(DioConsumer(dio: Dio())),
+      //               ),
+      //             ],
+      //             child: SignupViewTwo(),
+      //           ));
 
       default:
         return MaterialPageRoute(builder: (_) => NoRouteScreen());

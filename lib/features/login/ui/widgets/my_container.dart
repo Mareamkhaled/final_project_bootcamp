@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/resources/app_colors.dart';
 
@@ -9,24 +8,31 @@ class MyContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      elevation: 8,
-      shadowColor: AppColors.myGrey,
-      borderRadius: BorderRadius.circular(30.r),
-      child: InkWell(
-        onTap: () {},
-        child: Container(
-          height: 100.h,
-          width: 100.w,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.r),
-              color: AppColors.myWhite),
-          child: Center(
-            child: Image.asset(
-              img,
-              height: 50.h,
-              width: 50.w,
-            ),
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        // height: 100.h,
+        // width: 100.w,
+        decoration: BoxDecoration(
+
+          boxShadow: [
+            BoxShadow(
+              // ignore: deprecated_member_use
+              color: Colors.black.withOpacity(0.25),
+              offset: const Offset(0, 0),
+              blurRadius: 4,
+
+            )
+          ],
+            borderRadius: BorderRadius.circular(10),
+            color: AppColors.myWhite),
+        child: Center(
+          child: Image.asset(
+            img,
+            height: 50,
+            width: 50,
           ),
         ),
       ),

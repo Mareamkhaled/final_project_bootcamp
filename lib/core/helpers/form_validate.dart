@@ -50,4 +50,25 @@ class FormValidator {
       return null;
     }
   }
+
+
+  static String? validatePhoneNumber(String? phone) {
+    if (phone == null || phone.isEmpty) {
+      return "You must enter your phone number";
+    } else if (!RegExp(r'^\d{11}$').hasMatch(phone)) {
+      return "You must enter valid phone number";
+    }
+    return null;
+  }
+
+
+  
+  static String? validateLocation(String? location) {
+    if (location == null || location.isEmpty) {
+      return "You must enter your location";
+    } else if (location.length < 5) {
+      return "You must enter valid location";
+    }
+    return null;
+  }
 }
