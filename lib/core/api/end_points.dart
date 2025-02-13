@@ -2,6 +2,11 @@ class EndPoints {
   static String basUrl = 'https://food-api-omega.vercel.app/api/v1/user/';
   static String logInUrl = 'signin';
   static String signUpUrl = 'signup';
+ static String getUserDataEndPoint (id){
+  return 'get-user/$id';
+ }
+
+  // static String getUserUrl = 'get-user';
 }
 
 class ApiKey {

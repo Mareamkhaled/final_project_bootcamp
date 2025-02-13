@@ -43,6 +43,7 @@ dependencies:
   gif_view: ^1.0.0
   google_fonts: ^6.2.1
   image_picker: ^1.1.2
+  jwt_decoder: ^2.0.1
   shared_preferences: ^2.5.2
   smooth_page_indicator: ^1.2.0+3
 

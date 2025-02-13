@@ -28,7 +28,13 @@ class Routing {
       case Routes.home:
         return MaterialPageRoute(builder: (context) => HomeView());
       case Routes.profile:
-        return MaterialPageRoute(builder: (context) => ProfileScreen());
+        return MaterialPageRoute(builder: (context) => MultiBlocProvider(
+            providers: [
+               BlocProvider<LoginCubit>(
+                      create: (context) => LoginCubit(DioConsumer(dio: Dio())),
+               )
+            ],child: ProfileScreen()),
+          );
       case Routes.login:
         return MaterialPageRoute(
             builder: (context) => BlocProvider(

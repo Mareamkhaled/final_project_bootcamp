@@ -30,7 +30,8 @@ class SignUpView extends StatelessWidget {
             content: Text(
           state.message,
         )));
-        // Navigator.pushNamed(context, Routes.home);
+        Navigator.pushNamed(context, Routes.profile);
+
       } else if (state is SignUPFailure) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             content: Text(
@@ -140,9 +141,9 @@ class SignUpView extends StatelessWidget {
                             style: AppStyles.semiBold14(context)
                                 .copyWith(color: AppColors.myWhite),
                             onTap: () {
-      context.read<SignupCubit>().signup();
+      // context.read<SignupCubit>().signup();
                               
-                              // validateThenSignUp(context);
+                              validateThenSignUp(context);
                               // Navigator.pushNamed(context, Routes.register2);
                               // context.read<LoginCubit>().signin();
                             },
@@ -182,7 +183,7 @@ class SignUpView extends StatelessWidget {
         .currentState!
         .validate()) {
       
-      // context.read<SignupCubit>().signup();
+      context.read<SignupCubit>().signup();
      
     }
   }
