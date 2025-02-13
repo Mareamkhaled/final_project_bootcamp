@@ -1,5 +1,6 @@
 import 'package:final_project_bootcamp/core/app_colors.dart';
 import 'package:final_project_bootcamp/main%20screen/presentation/widgets/location_section_with_notification_button.dart';
+import 'package:final_project_bootcamp/main%20screen/presentation/widgets/search_and_filter_button.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
@@ -15,7 +16,14 @@ class MainScreen extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            LocationSectionWithNotificationButton()
+            LocationSectionWithNotificationButton(),
+            SizedBox(
+              height: 15,
+            ),
+            SearchAndFilterButton(),
+            SizedBox(
+              height: 20,
+            ),
           ],
         ),
       ),
