@@ -14,8 +14,8 @@ class ProductNameWithPriceAndRate extends StatelessWidget {
   });
 
   final String nameProduct;
-  final double newPrice;
-  final double oldPrice;
+  final String newPrice;
+  final String oldPrice;
 
   @override
   Widget build(BuildContext context) {
