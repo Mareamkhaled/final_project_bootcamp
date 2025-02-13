@@ -30,6 +30,7 @@ environment:
 dependencies:
   animate_do: ^4.0.0
   cupertino_icons: ^1.0.8
+  device_preview: ^1.2.0
   dio: ^5.8.0+1
   flutter:
     sdk: flutter
@@ -37,8 +38,11 @@ dependencies:
   flutter_hooks: ^0.20.5
   flutter_screenutil: ^5.9.3
   gap: ^3.0.1
+  geocoding: ^3.0.0
+  geolocator: ^13.0.2
   gif_view: ^1.0.0
   google_fonts: ^6.2.1
+  image_picker: ^1.1.2
   shared_preferences: ^2.5.2
   smooth_page_indicator: ^1.2.0+3
 

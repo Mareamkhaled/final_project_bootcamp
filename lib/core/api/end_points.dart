@@ -10,6 +10,13 @@ class ApiKey {
   static String email = 'email';
   static String name = 'name';
   static String password = 'password';
+  static String confirmPassword= 'confirmPassword';
   static String token = 'token';
   static String id = 'id';
+  static String location = 'location';
+  static String profilePic = 'profilePic';
+  static String phone = 'phone';
+  static String message = 'message';
+
+
 }

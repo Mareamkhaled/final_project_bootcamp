@@ -25,7 +25,7 @@ class OnBoardingItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.w),
+        padding: EdgeInsets.symmetric(horizontal: 25),
         child: Column(
           children: [
             Expanded(

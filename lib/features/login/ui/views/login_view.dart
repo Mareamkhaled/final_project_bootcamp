@@ -31,7 +31,7 @@ class LogInView extends StatelessWidget {
             content: Text(
           "Successfully logged in",
         )));
-        Navigator.pushNamed(context, Routes.test);
+        Navigator.pushNamed(context, Routes.profile);
       } else if (state is LoginFailure) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             content: Text(
@@ -44,7 +44,7 @@ class LogInView extends StatelessWidget {
           resizeToAvoidBottomInset: false,
           body: SafeArea(
               child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            padding: EdgeInsets.symmetric(horizontal: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               // mainAxisAlignment: MainAxisAlignment.center,
@@ -95,12 +95,13 @@ class LogInView extends StatelessWidget {
                     )),
                 Gap(15.h),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  // spacing: 20,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     MyContainer(img: Assets.assetsImagesGooglePng),
-                    Gap(15.w),
+                    // Gap(15.w),
                     MyContainer(img: Assets.assetsImagesApplePng),
-                    Gap(15.w),
+                    // Gap(15.w),
                     MyContainer(img: Assets.assetsImagesFaceBookPng)
                   ],
                 ),
