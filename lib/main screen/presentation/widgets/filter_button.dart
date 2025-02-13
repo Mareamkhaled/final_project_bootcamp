@@ -1,4 +1,5 @@
 import 'package:final_project_bootcamp/core/app_colors.dart';
+import 'package:final_project_bootcamp/core/app_images.dart';
 import 'package:flutter/material.dart';
 
 class FilterButton extends StatelessWidget {
@@ -10,15 +11,13 @@ class FilterButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Ink(
       child: Container(
-        padding: EdgeInsets.all(8),
+        padding: EdgeInsets.all(12),
         decoration: BoxDecoration(
           color: AppColors.myBlue,
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Icon(
-          Icons.filter_list,
-          size: 30,
-          color: AppColors.myWhite,
+        child: Image.asset(
+          Assets.assetsImagesfilter,
         ),
       ),
     );
