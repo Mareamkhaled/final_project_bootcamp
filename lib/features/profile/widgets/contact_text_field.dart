@@ -6,11 +6,11 @@ class ContactTextField extends StatelessWidget {
   final TextEditingController controller;
   final IconData icon;
   final String label;
-
+  final String hintText;
   const ContactTextField({super.key, 
     required this.controller,
     required this.icon,
-    required this.label,
+    required this.label, required this.hintText,
   });
 
   @override
@@ -20,7 +20,8 @@ class ContactTextField extends StatelessWidget {
       child: TextField(
         controller: controller,
         decoration: InputDecoration(
-          
+           hintText:hintText ,
+           hintStyle: AppStyles.regular12(context).copyWith(color: AppColors.myGrey),
           icon: Icon(icon, color: AppColors.myBlue),
           labelText: label,
           labelStyle: AppStyles.semiBold16(context).copyWith(color: AppColors.myBlack)

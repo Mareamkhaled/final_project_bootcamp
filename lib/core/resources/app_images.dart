@@ -9,6 +9,7 @@ class Assets{
    static const String assetsImagesFaceBookPng = 'assets/images/Facebook.png';
    static const String assetsImagesGooglePng = 'assets/images/google.png';
    static const String assetsImagesApplePng = 'assets/images/apple.png';
+   static const String assetsImagestojiPng = 'assets/images/toji.png';
    
    
    

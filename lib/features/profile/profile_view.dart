@@ -158,6 +158,7 @@
 import 'package:final_project_bootcamp/core/resources/app_colors.dart';
 import 'package:final_project_bootcamp/core/resources/app_style.dart';
 import 'package:final_project_bootcamp/features/login/logic/cubit/login_cubit.dart';
+import 'package:final_project_bootcamp/features/profile/profile_view_default.dart';
 import 'package:final_project_bootcamp/features/profile/widgets/choice_button.dart';
 import 'package:final_project_bootcamp/features/profile/widgets/contact_text_field.dart';
 import 'package:flutter/material.dart';
@@ -254,21 +255,29 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 ContactTextField(
+                  hintText: "mariam",
+
                   controller: nameController,
                   icon: Icons.person,
                   label: 'Name',
                 ),
                 ContactTextField(
+                  hintText: "maream@gmail.com",
+
                   controller: emailController,
                   icon: Icons.email,
                   label: 'Email',
                 ),
                 ContactTextField(
+                  hintText: "Italia",
+
                   controller: locationController,
                   icon: Icons.location_on,
                   label: 'Location',
                 ),
                 ContactTextField(
+                  hintText: "+20123456789",
+
                   controller: phoneController,
                   icon: Icons.phone,
                   label: 'Mobile Phone',
@@ -298,11 +307,7 @@ class ProfileScreen extends StatelessWidget {
             ),
           );
         } else {
-          return Scaffold(
-            body: Center(
-              child: Text('An error occurred'),
-            ),
-          );
+          return ProfileScreenDefault();
         }
       },
     );
