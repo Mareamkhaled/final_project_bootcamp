@@ -4,6 +4,7 @@ import 'package:final_project_bootcamp/core/resources/app_images.dart';
 import 'package:final_project_bootcamp/features/home/presentation/widgets/new_price_and_the_old.dart';
 import 'package:final_project_bootcamp/features/home/presentation/widgets/rating_section.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 import '../../../../core/resources/app_colors.dart';
 import '../../../../core/resources/app_style.dart';
@@ -34,7 +35,7 @@ class ProductItemm extends StatelessWidget {
               width: double.infinity,
               padding: const EdgeInsets.symmetric(
                 horizontal: 15,
-                vertical: 12,
+                vertical: 8,
               ),
               color: AppColors.myWhite,
               alignment: Alignment.bottomCenter,
@@ -50,6 +51,7 @@ class ProductItemm extends StatelessWidget {
                       fontSize: 10
                     ) ),
                   ),
+                  Gap(5),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -57,6 +59,8 @@ class ProductItemm extends StatelessWidget {
                       RatingSection()
                     ],
                   ),
+                  Gap(5),
+
                   MyButton(onTap: (){}, color: AppColors.myBlue, text: "Add To Cart", style: AppStyles.semiBold.copyWith(
                     color: AppColors.myWhite,
                     fontSize: 8
@@ -67,7 +71,7 @@ class ProductItemm extends StatelessWidget {
             ),
           ),
           child: Container(
-            color: AppColors.myGrey,
+            color: AppColors.myWhite,
             child: product.imagePath!.isNotEmpty
                 ? FadeInImage.assetNetwork(
                     width: double.infinity,

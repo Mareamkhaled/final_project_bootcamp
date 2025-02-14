@@ -29,6 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   animate_do: ^4.0.0
+  carousel_slider: ^5.0.0
   cupertino_icons: ^1.0.8
   device_preview: ^1.2.0
   dio: ^5.8.0+1

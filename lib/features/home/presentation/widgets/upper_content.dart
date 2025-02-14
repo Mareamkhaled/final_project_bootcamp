@@ -5,6 +5,7 @@ import 'package:final_project_bootcamp/features/home/presentation/widgets/bannar
 import 'package:final_project_bootcamp/features/home/presentation/widgets/location_section_with_notification_button.dart';
 import 'package:final_project_bootcamp/features/home/presentation/widgets/search_and_filter_button.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 
 class UpperContent extends StatelessWidget {
@@ -22,14 +23,10 @@ class UpperContent extends StatelessWidget {
             height: 40,
           ),
           LocationSectionWithNotificationButton(),
-          SizedBox(
-            height: 15,
-          ),
+          Gap(30),
           SearchAndFilterButton(),
-          SizedBox(
-            height: 20,
-          ),
-          BannarSaleCard(),
+          // Gap(30),
+          CarouselSliderExample(),
           // here
         ],
       ),

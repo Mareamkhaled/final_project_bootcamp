@@ -1,55 +1,199 @@
-// import 'package:final_project_bootcamp/core/app_colors.dart';
-// import 'package:final_project_bootcamp/core/app_images.dart';
-// import 'package:final_project_bootcamp/main%20screen/presentation/widgets/bannar_sale_content.dart';
-// ignore_for_file: deprecated_member_use
+// import 'package:carousel_slider/carousel_slider.dart';
+// import 'package:final_project_bootcamp/core/helpers/get_font_size.dart';
+// import 'package:final_project_bootcamp/core/resources/app_images.dart';
+// import 'package:final_project_bootcamp/core/resources/app_style.dart';
+// import 'package:final_project_bootcamp/features/profile/widgets/choice_button.dart';
+// import 'package:final_project_bootcamp/my_app.dart';
+// import 'package:flutter/material.dart';
+// import 'package:gap/gap.dart';
 
-import 'package:final_project_bootcamp/features/home/presentation/widgets/bannar_sale_content.dart';
+// import '../../../../core/resources/app_colors.dart';
+
+// class CarouselSliderExample extends StatelessWidget {
+//   final List<String> imgList = [
+//     Assets.assetsImagesFrameOne,
+//     Assets.assetsImagesFrameTwo,
+//     Assets.assetsImagesFrameThree,
+//   ];
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return CarouselSlider(
+//       options: CarouselOptions(
+//         height: 200.0,
+//         autoPlay: true,
+//         enlargeCenterPage: true,
+//       ),
+//       items: imgList.map((item) => Stack(
+//         children: [
+//           Center(
+//             child: Image.asset(item, fit: BoxFit.cover, width: 1000),
+//           ),
+//           Center(
+//             child: Column(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: [
+//                 Gap(10),
+//                 Text(
+//                   "Elevate Your Style",
+//                   style:AppStyles.semiBold.copyWith(
+//                     fontSize: getFontSize(context, 14),
+//                     color: AppColors.myYellow,
+//                     shadows: [
+//                       Shadow(
+//                         blurRadius: 10.0,
+//                             color: Colors.green,
+//                             offset: Offset(2.0, 2.0),
+//                       )
+//                     ]
+//                   ),
+//                 ),
+//                 Gap(12),
+//                 Text(
+//                   "Discover the Latest Trends in Accessories \n to Complete Your Look",
+//                   textAlign: TextAlign.center,
+//                   style: TextStyle(
+//                     fontWeight: FontWeight.w400,
+//                     color: Colors.pink, // Replace with AppColors.myBink
+//                     fontSize: 8,
+//                   ),
+//                 ),
+//                 Gap(12),
+                
+//                 Padding(
+//                   padding: EdgeInsets.symmetric(horizontal: 65),
+//                   child: ChoiceButton(onTap: (){}, color: AppColors.myYellow, text: "Shop now", style: AppStyles.semiBold.copyWith(
+//                     fontSize: getFontSize(context, 10),
+//                     color: AppColors.myBlue,
+//                   )),
+//                 )
+//               ],
+//             ),
+//           ),
+//         ],
+//       )).toList(),
+
+      
+//     );
+//   }
+// }
+
+
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:final_project_bootcamp/core/helpers/get_font_size.dart';
+import 'package:final_project_bootcamp/core/resources/app_images.dart';
+import 'package:final_project_bootcamp/core/resources/app_style.dart';
+import 'package:final_project_bootcamp/features/profile/widgets/choice_button.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 import '../../../../core/resources/app_colors.dart';
-import '../../../../core/resources/app_images.dart';
 
-class BannarSaleCard extends StatelessWidget {
-  const BannarSaleCard({
-    super.key,
-  });
+class CarouselSliderExample extends StatefulWidget {
+  @override
+  _CarouselSliderExampleState createState() => _CarouselSliderExampleState();
+}
+
+class _CarouselSliderExampleState extends State<CarouselSliderExample> {
+  final List<String> imgList = [
+    Assets.assetsImagesFrameOne,
+    Assets.assetsImagesFrameTwo,
+    Assets.assetsImagesFrameThree,
+  ];
+
+  int _current = 0;
+  final CarouselSliderController _controller = CarouselSliderController();
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.sizeOf(context).height * 0.22,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(
-            Assets.assetsImagesOnboarding1Png,
-          ),
-          fit: BoxFit.cover,
-        ),
-        color: AppColors.myBlue,
-        borderRadius: BorderRadius.all(
-          Radius.circular(10),
-        ),
-      ),
-      child: Container(
-        height: MediaQuery.sizeOf(context).height * 0.22,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              // ignore: duplicate_ignore
-              // ignore: deprecated_member_use
-              AppColors.myBlue.withOpacity(0.5),
-              AppColors.myWhite.withOpacity(0),
-              AppColors.myBlue.withOpacity(0.5),
+    return Column(
+      children: [
+        CarouselSlider(
+          items: imgList.map((item) => Stack(
+            children: [
+              Center(
+                child: Image.asset(item, fit: BoxFit.cover, width: 1000),
+              ),
+              Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Gap(10),
+                    Text(
+                      "Elevate Your Style",
+                      style: AppStyles.semiBold.copyWith(
+                        fontSize: getFontSize(context, 14),
+                        color: AppColors.myYellow,
+                        shadows: [
+                          Shadow(
+                            blurRadius: 10.0,
+                            color: Colors.green,
+                            offset: Offset(2.0, 2.0),
+                          )
+                        ],
+                      ),
+                    ),
+                    Gap(10),
+                    Text(
+                      "Discover the Latest Trends in Accessories \n to Complete Your Look",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        color: Colors.pink, // Replace with AppColors.myBink
+                        fontSize: 8,
+                      ),
+                    ),
+                    Gap(10),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 65),
+                      child: ChoiceButton(
+                        onTap: () {},
+                        color: AppColors.myYellow,
+                        text: "Shop now",
+                        style: AppStyles.semiBold.copyWith(
+                          fontSize: getFontSize(context, 10),
+                          color: AppColors.myBlue,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
-          ),
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
+          )).toList(),
+          carouselController: _controller,
+          options: CarouselOptions(
+            height: 200.0,
+            autoPlay: true,
+            enlargeCenterPage: true,
+            onPageChanged: (index, reason) {
+              setState(() {
+                _current = index;
+              });
+            },
           ),
         ),
-        child: BannarSaleContent(),
-      ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: imgList.asMap().entries.map((entry) {
+            return GestureDetector(
+              onTap: () => _controller.animateToPage(entry.key),
+              child: Container(
+                width: 8.0,
+                height: 8.0,
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  // color: AppColors.myBlue
+                  color: (Theme.of(context).brightness == Brightness.dark
+                      ? AppColors.myWhite
+                      : AppColors.myBlue).withOpacity(_current == entry.key ? 0.9 : 0.4),
+                ),
+              ),
+            );
+          }).toList(),
+        ),
+      ],
     );
   }
 }

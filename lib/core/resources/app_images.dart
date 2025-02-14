@@ -15,6 +15,10 @@ class Assets{
    static const String assetsImagesThree = 'assets/images/Group.png';
    static const String assetsImagesFour = 'assets/images/Group2.png';
    static const String assetsImagesGif = 'assets/images/Animation.gif';
+   static const String assetsImagesNotification = 'assets/images/notification_pic_1.png';
+   static const String assetsImagesFrameOne = 'assets/images/Frame1.png';
+   static const String assetsImagesFrameTwo = 'assets/images/Frame2.png';
+   static const String assetsImagesFrameThree = 'assets/images/Frame3.png';
    
    
    

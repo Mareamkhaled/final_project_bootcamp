@@ -39,101 +39,103 @@ class ProfileScreenDefault extends StatelessWidget {
                   style: AppStyles.semiBold
                       .copyWith(color: AppColors.myBlack, fontSize: getFontSize(context, 16))),
             ),
-            body: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Center(
-                  child: Container(
-                    width: double.infinity,
-                    height: 250,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(20),
-                        bottomRight: Radius.circular(20),
+            body: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(
+                    child: Container(
+                      width: double.infinity,
+                      height: 250,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(20),
+                          bottomRight: Radius.circular(20),
+                        ),
+                        color: AppColors.myBlue,
                       ),
-                      color: AppColors.myBlue,
-                    ),
-                    child: Column(
-                      children: [
-                        CircleAvatar(
-                          radius: 70,
-                          backgroundImage:
-                          AssetImage(Assets.assetsImagestojiPng),
-                        
-                              // NetworkImage(state.userModel.profilePic),
-                        ),
-                        Text(
-                          "Mariam",
-                          // state.userModel.name,
-                          style: TextStyle(
-                            fontSize: 24.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
+                      child: Column(
+                        children: [
+                          CircleAvatar(
+                            radius: 70,
+                            backgroundImage:
+                            AssetImage(Assets.assetsImagestojiPng),
+                          
+                                // NetworkImage(state.userModel.profilePic),
                           ),
-                        ),
-                        SizedBox(height: 5.0),
-                        Text(
-                          // state.userModel.email,
-                          "mareamah@gmail.com",
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            color: Colors.white70,
+                          Text(
+                            "Mariam",
+                            // state.userModel.name,
+                            style: TextStyle(
+                              fontSize: 24.0,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                      ],
+                          SizedBox(height: 5.0),
+                          Text(
+                            // state.userModel.email,
+                            "mareamah@gmail.com",
+                            style: TextStyle(
+                              fontSize: 16.0,
+                              color: Colors.white70,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(height: 20),
-                ContactTextField(
-                  hintText: "mariam",
-                  controller: nameController,
-                  icon: Icons.person,
-                  label: 'Name',
-                  
-                ),
-                ContactTextField(
-                  hintText: "maream@gmail.com",
-                  controller: emailController,
-                  icon: Icons.email,
-                  label: 'Email',
-                ),
-                ContactTextField(
-                  hintText: "Italia",
-                  controller: locationController,
-                  icon: Icons.location_on,
-                  label: 'Location',
-                ),
-                ContactTextField(
-                  hintText: "+20123456789",
-                  controller: phoneController,
-                  icon: Icons.phone,
-                  label: 'Mobile Phone',
-                ),
-                Gap(20.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                   ChoiceButton(
-                      onTap: () {},
-                      color: AppColors.myWhite,
-                      text: "Cancel",
-                      border: Border.all(color: AppColors.myRed,),
-                      style: AppStyles.semiBold
-                          .copyWith(color: AppColors.myRed, fontSize: getFontSize(context, 14)),
-                    ),
-                    Gap(40.w),
-                    ChoiceButton(
-                      onTap: () {},
-                      border: Border.all(color: AppColors.myBlue, width: 2),
-                      color: AppColors.myBlue,
-                      text: "Save",
-                      style: AppStyles.semiBold
-                          .copyWith(color: AppColors.myWhite, fontSize: getFontSize(context, 14)),
-                    ),
-                  ],
-                )
-              ],
+                  SizedBox(height: 20),
+                  ContactTextField(
+                    hintText: "mariam",
+                    controller: nameController,
+                    icon: Icons.person,
+                    label: 'Name',
+                    
+                  ),
+                  ContactTextField(
+                    hintText: "maream@gmail.com",
+                    controller: emailController,
+                    icon: Icons.email,
+                    label: 'Email',
+                  ),
+                  ContactTextField(
+                    hintText: "Italia",
+                    controller: locationController,
+                    icon: Icons.location_on,
+                    label: 'Location',
+                  ),
+                  ContactTextField(
+                    hintText: "+20123456789",
+                    controller: phoneController,
+                    icon: Icons.phone,
+                    label: 'Mobile Phone',
+                  ),
+                  Gap(20.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                     ChoiceButton(
+                        onTap: () {},
+                        color: AppColors.myWhite,
+                        text: "Cancel",
+                        border: Border.all(color: AppColors.myRed,),
+                        style: AppStyles.semiBold
+                            .copyWith(color: AppColors.myRed, fontSize: getFontSize(context, 14)),
+                      ),
+                      Gap(40.w),
+                      ChoiceButton(
+                        onTap: () {},
+                        border: Border.all(color: AppColors.myBlue, width: 2),
+                        color: AppColors.myBlue,
+                        text: "Save",
+                        style: AppStyles.semiBold
+                            .copyWith(color: AppColors.myWhite, fontSize: getFontSize(context, 14)),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           );
   }

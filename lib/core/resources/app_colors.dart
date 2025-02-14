@@ -9,5 +9,6 @@ class AppColors {
   static const formColor = Color(0xFFF6F6F6);
   static const myBlue = Color(0xFF008080 );
   static const myRed = Color(0xFFDB4444);
+  static const myYellow = Color(0xFFF4F8D3);
 
 }

@@ -28,9 +28,13 @@ class _MyBottomNavigationState extends State<MyBottomNavigation> {
       _selectedIndex = index;
     });
 
-    if (index == 3) { // Assuming Profile is at index 3
+    if (index == 3) { 
       Navigator.pushNamed(context, Routes.profile);
-    } else {
+    } 
+    else if (index == 2) {
+      Navigator.pushNamed(context, Routes.notification);
+    }
+    else {
       setState(() {
         _selectedIndex = index;
       });

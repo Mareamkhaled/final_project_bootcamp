@@ -9,6 +9,7 @@ class Routes {
   static const String profile = '/profile';
   static const allProducts='/all_products';
    static const detailProducts='/product_details';
+   static const notification='/notification_screen';
   
   
 }

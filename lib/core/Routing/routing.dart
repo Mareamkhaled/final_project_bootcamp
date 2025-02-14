@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:final_project_bootcamp/features/notification/presentation/views/notification_screen.dart';
 
 import '../../features/profile/profile_view.dart';
 import '../../features/signup/logic/cubit/signup_cubit.dart';
@@ -35,6 +36,8 @@ class Routing {
         return MaterialPageRoute(builder: (context) => SplashView());
       case Routes.onboarding:
         return MaterialPageRoute(builder: (context) => OnboardingView());
+      case Routes.notification:
+        return MaterialPageRoute(builder: (context) => NotificationScreen());
       case Routes.test:
         return MaterialPageRoute(builder: (context) => Test());
       // case Routes.home:

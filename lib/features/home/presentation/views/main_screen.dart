@@ -24,7 +24,7 @@ class MainScreen extends StatelessWidget {
             ),
             CategoriesSection(),
             SizedBox(
-              height: 15,
+              height: 30,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -32,13 +32,13 @@ class MainScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Most Popular",
+                    "Most Popular 🔥",
                     style: AppStyles.semiBold.copyWith(
                       color: AppColors.myBlack,
-                      fontSize: 16,
+                      fontSize: 20,
                     ),
                   ),
-                  SizedBox(height: 15),
+                  // SizedBox(height: 15),
                   CustomGridView(),
                 ],
               ),
