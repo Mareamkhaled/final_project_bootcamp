@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:gif_view/gif_view.dart';
 import '../../../core/helpers/get_font_size.dart';
 import '../../../core/resources/app_colors.dart';
 import '../../../core/resources/app_style.dart';
