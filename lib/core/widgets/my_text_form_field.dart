@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
+import '../helpers/get_font_size.dart';
 import '../resources/app_colors.dart';
 import '../resources/app_style.dart';
 
@@ -35,8 +36,8 @@ class MyTextFormField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(text,
-            style: AppStyles.semiBold14(context)
-                .copyWith(color: AppColors.myBlack)),
+            style: AppStyles.semiBold
+                .copyWith(color: AppColors.myBlack, fontSize: getFontSize(context, 14))),
         Gap(15.h),
         TextFormField(
           obscureText: isObscureText,
@@ -56,8 +57,8 @@ class MyTextFormField extends StatelessWidget {
                
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
             hintText: hintText,
-            hintStyle: AppStyles.regular12(context).copyWith(
-                color: AppColors.myGrey, )
+            hintStyle: AppStyles.regular.copyWith(
+                color: AppColors.myGrey, fontSize: getFontSize(context, 12) )
               // hintStyle: AppStyle.fontPoppinsRegular14Grey
               ),
         ),

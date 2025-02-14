@@ -1,3 +1,4 @@
+// ignore: unused_import
 import 'package:final_project_bootcamp/core/cache/cache_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,6 +7,7 @@ import '../../../../core/api/api_consumer.dart';
 import '../../../../core/api/end_points.dart';
 import '../../../../core/errors/exceptions.dart';
 import '../../../../core/functions/upload_image_to_api.dart';
+// ignore: unused_import
 import '../signup_model.dart';
 part 'signup_state.dart';
 
@@ -50,24 +52,26 @@ class SignupCubit extends Cubit<SignupState> {
         ApiKey.profilePic: await uploadImageToApi(profilePic!)
       });
       // SignUpModel signUpModel = SignUpModel.fromJson(response);
-      void processResponse(Map<String, dynamic>? response) {
-  try {
-    if (response != null) {
-      SignUpModel signUpModel = SignUpModel.fromJson(response);
-      emit(SignUPSuccess(message: signUpModel.msg));
-    } else {
-      emit(SignUPFailure(errorMsg: 'Response is null'));
-    }
-  } catch (e) {
-    emit(SignUPFailure(errorMsg: e.toString()));
-  }
-}
-
+      await Future.delayed(Duration(seconds: 2));
       emit(SignUPSuccess(message: response.toString()));
     }on ServerExceptions catch(e){
       emit(SignUPFailure(errorMsg: e.errorModel.errorMessage));
   }
   }
+  
+
+   Future<void> verifyEmail() async {
+    emit(SignUPLoading());
+    try {
+      // Simulate email verification
+      await Future.delayed(Duration(seconds: 2));
+
+      emit(SignUPSuccess(message: 'Email verified successfully'));
+    } catch (e) {
+      emit(SignUPFailure(errorMsg: e.toString()));
+    }
+  }
+  
   
 }
 

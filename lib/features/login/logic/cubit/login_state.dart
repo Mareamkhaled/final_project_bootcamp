@@ -38,11 +38,13 @@ final class GetUserFailure extends LoginState {
   final String errorMsg;
   GetUserFailure({required this.errorMsg});
   @override
+  // ignore: hash_and_equals
   int get hashCode => errorMsg.hashCode;
 }
 final class LoginFailure extends LoginState {
   final String errorMsg;
   LoginFailure({required this.errorMsg});
   @override
+  // ignore: hash_and_equals
   int get hashCode => errorMsg.hashCode;
 }

@@ -2,6 +2,8 @@ import 'package:final_project_bootcamp/core/resources/app_colors.dart';
 import 'package:final_project_bootcamp/core/resources/app_style.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/helpers/get_font_size.dart';
+
 class ContactTextField extends StatelessWidget {
   final TextEditingController controller;
   final IconData icon;
@@ -21,11 +23,11 @@ class ContactTextField extends StatelessWidget {
         controller: controller,
         decoration: InputDecoration(
            hintText:hintText ,
-           hintStyle: AppStyles.regular12(context).copyWith(color: AppColors.myGrey),
+           hintStyle: AppStyles.regular.copyWith(color: AppColors.myGrey,fontSize: getFontSize(context, 12)),
           icon: Icon(icon, color: AppColors.myBlue),
           labelText: label,
-          labelStyle: AppStyles.semiBold16(context).copyWith(color: AppColors.myBlack)
-          ,
+          labelStyle: AppStyles.semiBold.copyWith(color: AppColors.myBlack,fontSize: getFontSize(context, 16)),
+          
           // border: OutlineInputBorder(),
         ),
       ),

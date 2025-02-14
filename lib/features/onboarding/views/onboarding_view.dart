@@ -117,6 +117,7 @@ import '../widgets/onboarding_item.dart';
 
 
 
+// ignore: must_be_immutable
 class OnboardingView extends HookWidget {
   OnboardingView({super.key});
   bool? isVisibleOne;

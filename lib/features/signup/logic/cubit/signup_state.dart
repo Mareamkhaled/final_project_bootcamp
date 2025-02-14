@@ -16,4 +16,4 @@ final class SignUPFailure extends SignupState {
   String errorMsg;
   SignUPFailure({required this.errorMsg});
 }
- 
+final class EmailVerificationSent extends SignupState {} 

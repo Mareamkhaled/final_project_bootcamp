@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:gif_view/gif_view.dart';
+import '../../../core/helpers/get_font_size.dart';
 import '../../../core/resources/app_colors.dart';
 import '../../../core/resources/app_style.dart';
 
@@ -128,15 +129,15 @@ class OnBoardingItem extends StatelessWidget {
                 // Lottie.asset(image),
                   Text(
                     title,
-                    style: AppStyles.bold24(context)
-                        .copyWith(color: AppColors.myBlue),
+                    style: AppStyles.bold
+                        .copyWith(color: AppColors.myBlue, fontSize: getFontSize(context, 24)),
                     textAlign: TextAlign.center,
                   ),
                   Gap(20.h),
                   Text(
                     description,
-                    style: AppStyles.regular16(context)
-                        .copyWith(color: AppColors.myGrey),
+                    style: AppStyles.regular
+                        .copyWith(color: AppColors.myGrey, fontSize: getFontSize(context, 16)),
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -152,8 +153,8 @@ class OnBoardingItem extends StatelessWidget {
                     onPressed: onPressedOne,
                     child: Text(
                       "Back",
-                      style: AppStyles.semiBold16(context)
-                          .copyWith(color: AppColors.myBlue),
+                      style: AppStyles.semiBold
+                          .copyWith(color: AppColors.myBlue, fontSize: getFontSize(context, 16)),
                     ),
                   ),
                 ),
@@ -163,8 +164,8 @@ class OnBoardingItem extends StatelessWidget {
                     onPressed: onPressedTwo,
                     child: Text(
                       "Next",
-                      style: AppStyles.semiBold16(context)
-                          .copyWith(color: AppColors.myBlue),
+                      style: AppStyles.semiBold
+                          .copyWith(color: AppColors.myBlue, fontSize: getFontSize(context, 16)),
                     ),
                   ),
                 ),

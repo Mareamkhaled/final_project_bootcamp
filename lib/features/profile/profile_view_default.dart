@@ -1,14 +1,13 @@
 import 'package:final_project_bootcamp/core/resources/app_colors.dart';
 import 'package:final_project_bootcamp/core/resources/app_images.dart';
 import 'package:final_project_bootcamp/core/resources/app_style.dart';
-import 'package:final_project_bootcamp/core/widgets/my_button.dart';
-import 'package:final_project_bootcamp/features/login/logic/cubit/login_cubit.dart';
 import 'package:final_project_bootcamp/features/profile/widgets/choice_button.dart';
 import 'package:final_project_bootcamp/features/profile/widgets/contact_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+
+import '../../core/helpers/get_font_size.dart';
 
 class ProfileScreenDefault extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
@@ -37,8 +36,8 @@ class ProfileScreenDefault extends StatelessWidget {
               ],
               backgroundColor: AppColors.myBlue,
               title: Text('Profile',
-                  style: AppStyles.semiBold16(context)
-                      .copyWith(color: AppColors.myBlack)),
+                  style: AppStyles.semiBold
+                      .copyWith(color: AppColors.myBlack, fontSize: getFontSize(context, 16))),
             ),
             body: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -120,8 +119,8 @@ class ProfileScreenDefault extends StatelessWidget {
                       color: AppColors.myWhite,
                       text: "Cancel",
                       border: Border.all(color: AppColors.myRed,),
-                      style: AppStyles.semiBold14(context)
-                          .copyWith(color: AppColors.myRed),
+                      style: AppStyles.semiBold
+                          .copyWith(color: AppColors.myRed, fontSize: getFontSize(context, 14)),
                     ),
                     Gap(40.w),
                     ChoiceButton(
@@ -129,8 +128,8 @@ class ProfileScreenDefault extends StatelessWidget {
                       border: Border.all(color: AppColors.myBlue, width: 2),
                       color: AppColors.myBlue,
                       text: "Save",
-                      style: AppStyles.semiBold14(context)
-                          .copyWith(color: AppColors.myWhite),
+                      style: AppStyles.semiBold
+                          .copyWith(color: AppColors.myWhite, fontSize: getFontSize(context, 14)),
                     ),
                   ],
                 )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/helpers/get_font_size.dart';
 import '../../../../core/resources/app_colors.dart';
 import '../../../../core/resources/app_style.dart';
 
@@ -13,7 +14,7 @@ class ForgetPassword extends StatelessWidget {
     return Row(
      mainAxisAlignment: MainAxisAlignment.end,
       children:[ Text("Forget Password?",style: 
-      AppStyles.regular12(context).copyWith(color: AppColors.myGrey),
+      AppStyles.regular.copyWith(color: AppColors.myGrey, fontSize: getFontSize(context, 12)),
       ),]
     );
   }

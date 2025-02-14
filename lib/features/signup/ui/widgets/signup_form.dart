@@ -26,14 +26,7 @@ class _SignupFormState extends State<SignupForm> {
           key: BlocProvider.of<SignupCubit>(context).signUpKey,
           child: Column(
             children: [
-              // MyTextFormField(
-              //   prefixIcon: Icon(Icons.person_2_outlined),
-              //   controller: BlocProvider.of<SignupCubit>(context).signUpName,
-              //   validator: FormValidator.validateName,
-              //   text: "Name",
-              //   hintText: "Enter your name",
-              // ),
-              // Gap(30.h),
+           
                 MyTextFormField(
                         prefixIcon: Icon(Icons.person_2_outlined),
                         controller:
@@ -84,6 +77,7 @@ class _SignupFormState extends State<SignupForm> {
                       : Icon(Icons.visibility),
                 ),
                 prefixIcon: Icon(Icons.lock_outline),
+                isObscureText: isObsecure2,
                 controller: BlocProvider.of<SignupCubit>(context).signUpConfirmPassword,
                  validator: (value) => FormValidator.validateConfirmPassword(
               BlocProvider.of<SignupCubit>(context).signUpPassword.text, value),

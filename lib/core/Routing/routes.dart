@@ -7,6 +7,8 @@ class Routes {
   static const String onboarding = '/onboarding';
   static const String test = '/test';
   static const String profile = '/profile';
+  static const allProducts='/all_products';
+   static const detailProducts='/product_details';
   
   
 }
