@@ -44,77 +44,79 @@ class LogInView extends StatelessWidget {
         body: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 25),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Gap(100.h),
-                Text(
-                  AppStrings.logIn,
-                  style: AppStyles.bold
-                      .copyWith(color: AppColors.myBlack, fontSize: getFontSize(context, 28)),
-                ),
-                Gap(5.h),
-                Text(
-                  AppStrings.logInWelcome,
-                  style: AppStyles.regular
-                      .copyWith(color: AppColors.myGrey, fontSize: getFontSize(context, 12)),
-                ),
-                Gap(30.h),
-                LogInForm(),
-                ForgetPassword(),
-                Gap(30.h),
-                Align(
-                  alignment: Alignment.center,
-                  child: state is LoginLoading
-                      ? CircularProgressIndicator()
-                      : MyButton(
-                          style: AppStyles.semiBold
-                              .copyWith(color: AppColors.myWhite, fontSize: getFontSize(context, 14)),
-                          onTap: () {
-                            validateThenLogin(context);
-                          },
-                          text: "Log In",
-                          color: AppColors.myBlue,
-                        ),
-                ),
-                Gap(15.h),
-                Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "or continue with ",
-                    style: AppStyles.semiBold
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Gap(100.h),
+                  Text(
+                    AppStrings.logIn,
+                    style: AppStyles.bold
+                        .copyWith(color: AppColors.myBlack, fontSize: getFontSize(context, 28)),
+                  ),
+                  Gap(5.h),
+                  Text(
+                    AppStrings.logInWelcome,
+                    style: AppStyles.regular
                         .copyWith(color: AppColors.myGrey, fontSize: getFontSize(context, 12)),
                   ),
-                ),
-                Gap(15.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    MyContainer(img: Assets.assetsImagesGooglePng),
-                    MyContainer(img: Assets.assetsImagesApplePng),
-                    MyContainer(img: Assets.assetsImagesFaceBookPng)
-                  ],
-                ),
-                Gap(25.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "don’t have an account? ",
+                  Gap(30.h),
+                  LogInForm(),
+                  ForgetPassword(),
+                  Gap(30.h),
+                  Align(
+                    alignment: Alignment.center,
+                    child: state is LoginLoading
+                        ? CircularProgressIndicator()
+                        : MyButton(
+                            style: AppStyles.semiBold
+                                .copyWith(color: AppColors.myWhite, fontSize: getFontSize(context, 14)),
+                            onTap: () {
+                              validateThenLogin(context);
+                            },
+                            text: "Log In",
+                            color: AppColors.myBlue,
+                          ),
+                  ),
+                  Gap(15.h),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "or continue with ",
                       style: AppStyles.semiBold
                           .copyWith(color: AppColors.myGrey, fontSize: getFontSize(context, 12)),
                     ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, Routes.register);
-                      },
-                      child: Text(" Register now ",
-                          style: AppStyles.semiBold
-                              .copyWith(color: AppColors.myBlue, fontSize: getFontSize(context, 12))),
-                    ),
-                  ],
-                )
-              ],
+                  ),
+                  Gap(15.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      MyContainer(img: Assets.assetsImagesGooglePng),
+                      MyContainer(img: Assets.assetsImagesApplePng),
+                      MyContainer(img: Assets.assetsImagesFaceBookPng)
+                    ],
+                  ),
+                  Gap(25.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "don’t have an account? ",
+                        style: AppStyles.semiBold
+                            .copyWith(color: AppColors.myGrey, fontSize: getFontSize(context, 12)),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, Routes.register);
+                        },
+                        child: Text(" Register now ",
+                            style: AppStyles.semiBold
+                                .copyWith(color: AppColors.myBlue, fontSize: getFontSize(context, 12))),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ),
