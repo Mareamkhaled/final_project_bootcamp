@@ -24,6 +24,7 @@ class ProductItemm extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
+            // ignore: deprecated_member_use
             color: AppColors.myBlack.withOpacity(0.25),
             offset: const Offset(0, 0),
             blurRadius: 4,
@@ -72,6 +73,7 @@ class ProductItemm extends StatelessWidget {
                           ],
                         ),
                         Gap(3),
+                        // ignore: sized_box_for_whitespace
                         Container(
                           width: double.infinity,
                           child: MyButton(

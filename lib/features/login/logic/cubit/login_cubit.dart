@@ -3,7 +3,6 @@ import 'package:final_project_bootcamp/core/models/sign_in_model.dart';
 import 'package:final_project_bootcamp/features/signup/ui/widgets/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jwt_decoder/jwt_decoder.dart';
 import '../../../../core/api/api_consumer.dart';
 import '../../../../core/api/end_points.dart';
 import '../../../../core/errors/exceptions.dart';
