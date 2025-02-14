@@ -4,8 +4,9 @@ import 'package:gap/gap.dart';
 
 import '../../../../core/resources/app_colors.dart';
 import '../../../../core/resources/app_style.dart';
-import '../../../../core/widgets/my_button.dart';
+// import '../../../../core/widgets/my_button.dart';
 import '../../data/models/clothes_model.dart';
+import '../widgets/aadd_to_cart_button.dart';
 import '../widgets/rating_section.dart';
 import '../widgets/size_selection.dart';
 
@@ -13,9 +14,9 @@ class ProductsDetails extends StatelessWidget {
   final ProductItem product;
   const ProductsDetails({super.key, required this.product});
 
-  Widget buildSliverAppBar() {
+  Widget buildSliverAppBar(BuildContext context) {
     return SliverAppBar(
-      expandedHeight: 600,
+      expandedHeight: MediaQuery.sizeOf(context).height * 0.4,
       pinned: true,
       stretch: true,
       backgroundColor: AppColors.myWhite,
@@ -24,7 +25,7 @@ class ProductsDetails extends StatelessWidget {
             tag: product.id!,
             child: Image.network(
               product.imagePath!,
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
             )),
       ),
    
@@ -69,7 +70,7 @@ class ProductsDetails extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
         
-          buildSliverAppBar(),
+          buildSliverAppBar(context),
         
           SliverList(
             delegate: SliverChildListDelegate(
@@ -154,14 +155,13 @@ class ProductsDetails extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
-                  width: 150, 
-                  height: 40, 
+                Spacer(),
+                Expanded(
                   child: MyButton(
                     color: AppColors.myBlue, 
                     onTap: () {}, 
-                    text: 'hhhhhhh', 
-                    style: AppStyles.semiBold.copyWith(color: AppColors.myRed, fontSize: 14),
+                    text: 'Add to Cart', 
+                    style: AppStyles.semiBold.copyWith(color: AppColors.myWhite, fontSize: 14),
                   ),
                 ),
               ],

@@ -72,8 +72,8 @@ class _CustomGridViewState extends State<CustomGridView> {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 2 / 3,
-                  crossAxisSpacing: 1,
-                  mainAxisSpacing: 1),
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10),
               shrinkWrap: true,
               physics: const ClampingScrollPhysics(),
               // padding: EdgeInsets.zero,

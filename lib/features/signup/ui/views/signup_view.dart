@@ -1,3 +1,7 @@
+// ignore_for_file: use_build_context_synchronously, duplicate_ignore
+
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:io';
 import 'package:final_project_bootcamp/core/helpers/get_font_size.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +18,7 @@ import '../../../../core/widgets/my_button.dart';
 import '../../logic/cubit/signup_cubit.dart';
 import '../widgets/signup_form.dart';
 
+// ignore: must_be_immutable
 class SignUpView extends StatelessWidget {
   SignUpView({super.key});
 
@@ -70,6 +75,7 @@ class SignUpView extends StatelessWidget {
                         child: context.read<SignupCubit>().profilePic == null
                             ? CircleAvatar(
                                 backgroundColor:
+                                    // ignore: deprecated_member_use
                                     AppColors.myBlue.withOpacity(0.2),
                                 child: Stack(
                                   children: [
@@ -96,6 +102,8 @@ class SignUpView extends StatelessWidget {
                                                   .pickImage(
                                                     source: ImageSource.gallery,
                                                   )
+                                                  // ignore: use_build_context_synchronously
+                                                  // ignore: use_build_context_synchronously
                                                   .then((value) => context
                                                       .read<SignupCubit>()
                                                       .uploadProfilePic(
@@ -233,6 +241,8 @@ class SignUpView extends StatelessWidget {
 }
 
 class EmailVerificationScreen extends StatelessWidget {
+  const EmailVerificationScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
