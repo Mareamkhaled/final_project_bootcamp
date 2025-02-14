@@ -26,11 +26,11 @@ class LoginCubit extends Cubit<LoginState> {
         ApiKey.email: signInEmail.text,
         ApiKey.password: signInPassword.text,
       });
-      user = SignInModel.fromJson(response);
-      final decodedToken = JwtDecoder.decode(user!.token);
+      // user = SignInModel.fromJson(response);
+      // final decodedToken = JwtDecoder.decode(user!.token);
       //  print(decodedToken['id']);
-      CacheHelper().saveData(key: ApiKey.token, value: user!.token);
-      CacheHelper().saveData(key: ApiKey.id, value: decodedToken['id']);
+      // CacheHelper().saveData(key: ApiKey.token, value: user!.token);
+      // CacheHelper().saveData(key: ApiKey.id, value: decodedToken['id']);
       emit(LoginSuccess());
     } on ServerExceptions catch (e) {
       emit(LoginFailure(errorMsg: e.errorModel.errorMessage));

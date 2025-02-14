@@ -1,26 +1,3 @@
-// part of 'login_cubit.dart';
-
-// @immutable
-// abstract class LoginState {}
-
-// final class LoginInitial extends LoginState {}
-// final class LoginLoading extends LoginState {}
-// final class LoginSuccess extends LoginState {}
-// final class GetUserSuccess extends LoginState {
-//   final UserModel userModel;
-//   GetUserSuccess({required this.userModel});
-// }
-// final class GetUserLoading extends LoginState {}
-// final class GetUserFailure extends LoginState {
-//    String errorMsg;
-//   GetUserFailure({required this.errorMsg});
-// }
-// // ignore: must_be_immutable
-// final class LoginFailure extends LoginState {
-//   String errorMsg;
-//   LoginFailure({required this.errorMsg});
-// }
-
 part of 'login_cubit.dart';
 
 @immutable
