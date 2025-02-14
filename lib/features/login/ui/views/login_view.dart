@@ -29,7 +29,7 @@ class LogInView extends StatelessWidget {
           duration: Duration(seconds: 2),
           content: Text("Successfully logged in"),
         ));
-        context.read<LoginCubit>().getUserProfile();
+        // context.read<LoginCubit>().getUserProfile();
         Navigator.pushNamed(context, Routes.allProducts);
       } else if (state is LoginFailure) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(

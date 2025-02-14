@@ -37,16 +37,7 @@ class SignUpView extends StatelessWidget {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             content: Text(state.errorMsg),
           ));
-        } else if (state is EmailVerificationSent) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            content: Text(
-                'Verification email sent. Please check your email to verify your account.'),
-          ));
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => EmailVerificationScreen()),
-          );
-        }
+        } 
       },
       builder: (context, state) {
         return Scaffold(

@@ -32,10 +32,11 @@ class OnBoardingItem extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                GifView(
-                  controller: GifController(),
-                  image: AssetImage(image),
-                ),
+                // GifView(
+                  // controller: GifController(),
+                   Image(image:AssetImage(image)),
+                  // image: AssetImage(image),
+                // ),
                 // Lottie.asset(image),
                   Text(
                     title,
