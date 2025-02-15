@@ -67,7 +67,7 @@ class _CarouselSliderExampleState extends State<CarouselSliderExample> {
                     ),
                     Gap(10),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 65),
+                      padding: EdgeInsets.symmetric(horizontal: 50),
                       child: ChoiceButton(
                         onTap: () {},
                         color: AppColors.myYellow,
