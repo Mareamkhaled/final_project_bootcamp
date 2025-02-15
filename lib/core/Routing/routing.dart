@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:final_project_bootcamp/features/notification/presentation/views/notification_screen.dart';
 
-import '../../features/profile/profile_view.dart';
+import '../../features/profile/views/profile_view.dart';
 import '../../features/signup/logic/cubit/signup_cubit.dart';
 import '../../features/signup/ui/views/signup_view.dart';
 import 'package:flutter/material.dart';

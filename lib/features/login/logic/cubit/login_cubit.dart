@@ -36,34 +36,21 @@ class LoginCubit extends Cubit<LoginState> {
     }
   }
 
-//   getUserProfile() async {
-//     try {
-//       emit(GetUserLoading());
-//   final response = await api.get(
-//       EndPoints.getUserDataEndPoint(CacheHelper().getData(key: ApiKey.id)));
-//       emit(GetUserSuccess(userModel:UserModel.fromJson(response) ));
-// } on ServerExceptions catch (e) {
-//   emit(GetUserFailure(errorMsg: e.errorModel.errorMessage));
-// }
-//     //  final response = await
-//   }
+  getUserProfile() async {
+    try {
+      emit(GetUserLoading());
+      final response = await api.get(
+          EndPoints.getUserDataEndPoint(CacheHelper().getData(key: ApiKey.id)));
 
-getUserProfile() async {
-  try {
-    emit(GetUserLoading());
-    final response = await api.get(
-      EndPoints.getUserDataEndPoint(CacheHelper().getData(key: ApiKey.id)));
-    
-    if (response != null && response is Map<String, dynamic>) {
-      emit(GetUserSuccess(userModel: UserModel.fromJson(response)));
-    } else {
-      emit(GetUserFailure(errorMsg: 'Invalid response format'));
+      if (response != null && response is Map<String, dynamic>) {
+        emit(GetUserSuccess(userModel: UserModel.fromJson(response)));
+      } else {
+        emit(GetUserFailure(errorMsg: 'Invalid response format'));
+      }
+    } on ServerExceptions catch (e) {
+      emit(GetUserFailure(errorMsg: e.errorModel.errorMessage));
+    } catch (e) {
+      emit(GetUserFailure(errorMsg: 'An unknown error occurred'));
     }
-  } on ServerExceptions catch (e) {
-    emit(GetUserFailure(errorMsg: e.errorModel.errorMessage));
-  } catch (e) {
-    emit(GetUserFailure(errorMsg: 'An unknown error occurred'));
   }
-}
-
 }

@@ -1,8 +1,10 @@
-import 'package:final_project_bootcamp/core/Routing/routes.dart';
+import '../../../../core/Routing/routes.dart';
+import '../views/main_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/resources/app_colors.dart';
-
+import '../../../notification/presentation/views/notification_screen.dart';
+import '../../../profile/views/profile_view_default.dart';
 
 class MyBottomNavigation extends StatefulWidget {
   const MyBottomNavigation({super.key});
@@ -12,15 +14,14 @@ class MyBottomNavigation extends StatefulWidget {
 }
 
 class _MyBottomNavigationState extends State<MyBottomNavigation> {
-
   int _selectedIndex = 0;
 
   // ignore: unused_field
   static final List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
-    WishlistScreen(),
-    NotificationsScreen(),
-    ProfileScreen(),
+    MainScreen(),
+    // WishlistScreen(),
+    NotificationScreen(),
+    ProfileScreenDefault(),
   ];
 
   void _onItemTapped(int index) {
@@ -28,74 +29,44 @@ class _MyBottomNavigationState extends State<MyBottomNavigation> {
       _selectedIndex = index;
     });
 
-    if (index == 3) { 
-      Navigator.pushNamed(context, Routes.profile);
-    } 
-    else if (index == 2) {
-      Navigator.pushNamed(context, Routes.notification);
-    }
-    else {
+    if (index == 3) {
+      Navigator.pushNamed(context, Routes.profile).then(
+        (value) {
+          setState(() {
+            _selectedIndex = 0;
+          });
+        },
+      );
+    } else if (index == 2) {
+      Navigator.pushNamed(context, Routes.notification).then(
+        (value) {
+          setState(() {
+            _selectedIndex = 0;
+          });
+        },
+      );
+    } else {
       setState(() {
         _selectedIndex = index;
       });
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      backgroundColor: const Color.fromARGB(255, 163, 26, 26),
+        backgroundColor: const Color.fromARGB(255, 163, 26, 26),
         selectedItemColor: AppColors.myBlue,
         unselectedItemColor: Colors.grey,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-      items: 
-    [
-       BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(Icons.favorite_border), label: 'Wishlist'),
           BottomNavigationBarItem(
               icon: Icon(Icons.notifications), label: 'Notifications'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile')
-    ]
-    
-    );
-  }
-}
-
-
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: Text('Home Screen'));
-  }
-}
-
-class WishlistScreen extends StatelessWidget {
-  const WishlistScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: Text('Wishlist Screen'));
-  }
-}
-
-class NotificationsScreen extends StatelessWidget {
-  const NotificationsScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: Text('Notifications Screen'));
-  }
-}
-
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: Text('Profile Screen'));
+        ]);
   }
 }

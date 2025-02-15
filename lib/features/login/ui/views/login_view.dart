@@ -1,3 +1,5 @@
+import 'package:final_project_bootcamp/features/login/ui/widgets/dont_have_an_account.dart';
+import 'package:final_project_bootcamp/features/login/ui/widgets/log_in_options.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,14 +8,13 @@ import 'package:gap/gap.dart';
 import '../../../../core/Routing/routes.dart';
 import '../../../../core/helpers/get_font_size.dart';
 import '../../../../core/resources/app_colors.dart';
-import '../../../../core/resources/app_images.dart';
 import '../../../../core/resources/app_strings.dart';
 import '../../../../core/resources/app_style.dart';
 import '../../../../core/widgets/my_button.dart';
 import '../../logic/cubit/login_cubit.dart';
 import '../widgets/forget_password.dart';
 import '../widgets/login_form.dart';
-import '../widgets/my_container.dart';
+
 
 // ignore: must_be_immutable
 class LogInView extends StatelessWidget {
@@ -79,42 +80,9 @@ class LogInView extends StatelessWidget {
                           ),
                   ),
                   Gap(15.h),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "or continue with ",
-                      style: AppStyles.semiBold
-                          .copyWith(color: AppColors.myGrey, fontSize: getFontSize(context, 12)),
-                    ),
-                  ),
-                  Gap(15.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      MyContainer(img: Assets.assetsImagesGooglePng),
-                      MyContainer(img: Assets.assetsImagesApplePng),
-                      MyContainer(img: Assets.assetsImagesFaceBookPng)
-                    ],
-                  ),
+                 LogInOptions(),
                   Gap(25.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "don’t have an account? ",
-                        style: AppStyles.semiBold
-                            .copyWith(color: AppColors.myGrey, fontSize: getFontSize(context, 12)),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, Routes.register);
-                        },
-                        child: Text(" Register now ",
-                            style: AppStyles.semiBold
-                                .copyWith(color: AppColors.myBlue, fontSize: getFontSize(context, 12))),
-                      ),
-                    ],
-                  )
+                  DontHaveAnAccount()
                 ],
               ),
             ),

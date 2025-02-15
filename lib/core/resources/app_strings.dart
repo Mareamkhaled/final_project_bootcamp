@@ -11,5 +11,12 @@ class AppStrings {
   static const String signUp = "Let’s sign you up.";
   static const String logInWelcome = "Welcome back, You’ve been missed";
   static const String signUpWelcome = "Be with our family ";
+  static const String dontHaveAnAccount= "don’t have an account? ";
+  static const String registerNow= "Register now";
+
+  static String name = 'Mariam';
+  static String email = 'mareamah@gmail.com';
+  static String defaultName = 'Mariam';
+  static String defaultEmail = 'mareamah@gmail.com';
   
 }

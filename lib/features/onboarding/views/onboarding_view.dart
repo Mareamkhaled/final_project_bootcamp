@@ -89,7 +89,7 @@ class OnboardingView extends HookWidget {
               ),
             ),
           ),
-          Gap(20.h)
+          Gap(30.h)
          ],
       ),
     );
